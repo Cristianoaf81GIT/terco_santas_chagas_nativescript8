@@ -9,8 +9,12 @@ const routes: Routes = [
     loadChildren: () => import('~/app/home/home.module').then((m) => m.HomeModule),
   },
   {
-    path: 'browse',
-    loadChildren: () => import('~/app/browse/browse.module').then((m) => m.BrowseModule),
+    path: 'how-to-pray',
+    loadChildren: () => import('~/app/how-to-pray/how-to-pray.module').then((m) => m.HowToPrayModule),
+  },
+  {
+    path: 'monday',
+    loadChildren: () => import('~/app/monday/monday.module').then((m) => m.MondayModule),
   },
   {
     path: 'search',

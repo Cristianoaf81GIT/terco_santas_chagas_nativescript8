@@ -7,6 +7,8 @@ import { Application } from '@nativescript/core'
   templateUrl: './home.component.html',
 })
 export class HomeComponent implements OnInit {
+
+
   constructor() {
     // Use the component constructor to inject providers.
   }

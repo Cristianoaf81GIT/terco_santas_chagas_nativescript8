@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core'
-import { NavigationEnd, Router } from '@angular/router'
-import { RouterExtensions } from '@nativescript/angular'
+import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { RouterExtensions } from '@nativescript/angular';
 import {
   DrawerTransitionBase,
   RadSideDrawer,
   SlideInOnTopTransition,
-} from 'nativescript-ui-sidedrawer'
-import { filter } from 'rxjs/operators'
-import { Application } from '@nativescript/core'
+} from 'nativescript-ui-sidedrawer';
+import { filter } from 'rxjs/operators';
+import { Application } from '@nativescript/core';
 
 @Component({
   selector: 'ns-app',
@@ -17,13 +17,16 @@ export class AppComponent implements OnInit {
   private _activatedUrl: string
   private _sideDrawerTransition: DrawerTransitionBase
 
-  constructor(private router: Router, private routerExtensions: RouterExtensions) {
+  constructor(
+    private router: Router,
+    private routerExtensions: RouterExtensions
+  ) {
     // Use the component constructor to inject services.
   }
 
   ngOnInit(): void {
-    this._activatedUrl = '/home'
-    this._sideDrawerTransition = new SlideInOnTopTransition()
+    this._activatedUrl = '/home';
+    this._sideDrawerTransition = new SlideInOnTopTransition();
 
     this.router.events
       .pipe(filter((event: any) => event instanceof NavigationEnd))
@@ -47,5 +50,9 @@ export class AppComponent implements OnInit {
 
     const sideDrawer = <RadSideDrawer>Application.getRootView()
     sideDrawer.closeDrawer()
+  }
+
+  get activatedUrl(): string {
+    return this._activatedUrl;
   }
 }

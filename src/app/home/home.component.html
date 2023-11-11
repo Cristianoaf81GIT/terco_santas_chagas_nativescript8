@@ -1,13 +1,19 @@
 <ActionBar class="action-bar">
   <NavigationButton visibility="hidden"></NavigationButton>
   <GridLayout columns="50, *">
-    <Label class="action-bar-title" text="Home" colSpan="2"></Label>
+    <Label class="action-bar-title" text="Apresentação" colSpan="2"></Label>
 
-    <Label class="fas" text="&#xf0c9;" (tap)="onDrawerButtonTap()"></Label>
+    <Label class="fas menu-icon" text="&#xf0c9;" (tap)="onDrawerButtonTap()"></Label>
   </GridLayout>
 </ActionBar>
 
-<GridLayout class="page__content">
-  <Label class="page__content-icon fas" text="&#xf015;"></Label>
-  <Label class="page__content-placeholder" text="<!-- Page content goes here -->"></Label>
-</GridLayout>
+<StackLayout class="page__content">
+    <Image src="~/app/assets/rounded.png" class="presentation-img"/>
+  <Label class="presentation-text"textWrap="true">
+    Na tradição cristã, as Cinco Santas Chagas, também conhecidas como Cinco
+    Chagas Sagradas ou Cinco Chagas Preciosas, são as cinco feridas que Jesus
+    Cristo sofreu durante a crucificação. As feridas têm sido foco de devoções
+    particulares, especialmente no fim da Idade Média, e têm frequentemente
+    sido refletidas na música e arte sacras.
+  </Label>
+</StackLayout>

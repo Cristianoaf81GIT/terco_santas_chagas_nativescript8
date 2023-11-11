@@ -1,0 +1,48 @@
+<ActionBar class="action-bar">
+  <NavigationButton visibility="hidden"></NavigationButton>
+  <GridLayout columns="50, *">
+    <Label class="action-bar-title" text="Segunda-feira" colSpan="2"></Label>
+
+    <Label class="fas" text="&#xf0c9;" (tap)="onDrawerButtonTap()"></Label>
+  </GridLayout>
+</ActionBar>
+
+<StackLayout class="page__content" letterSpacing="2">
+  <Label
+    class="week-misteries"
+    text="1º - Jesus perdoa a mulher adultera."
+    textWrap="true"
+  ></Label>
+
+  <Label
+    class="week-misteries"
+    text="2º - Jesus se oferece como água viva."
+    textWrap="true"
+  ></Label>
+
+  <Label
+    class="week-misteries"
+    text="3º - Jesus consola a irmã de Lázaro."
+    textWrap="true"
+  ></Label>
+
+  <Label
+    class="week-misteries"
+    text="4º - Jesus se manifesta como bom pastor."
+    textWrap="true"
+  ></Label>
+
+  <Label
+    class="week-misteries"
+    text="5º - Jesus perdoa o bom ladrão."
+    textWrap="true"
+  ></Label>
+
+  <StackLayout class="references-group" letterSpacing="2">
+    <Label text="1º Mistério (Jo 8,3-5.11)" class="evangelion-references"></Label>
+    <Label text="2º Mistério (Jo 4,9-10.13-14)" class="evangelion-references"></Label>
+    <Label text="3º Mistério (Jo 11,21-25)" class="evangelion-references"></Label>
+    <Label text="4º Mistério (Jo 10,14-15.27)" class="evangelion-references"></Label>
+    <Label text="5º Mistério (Lc 23,39-43)" class="evangelion-references"></Label>
+  </StackLayout>
+</StackLayout>

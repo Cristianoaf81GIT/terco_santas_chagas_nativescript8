@@ -1,69 +1,127 @@
-<RadSideDrawer [drawerTransition]="sideDrawerTransition">
+<RadSideDrawer [drawerTransition]="sideDrawerTransition" class="page__content">
   <GridLayout tkDrawerContent rows="auto, *" class="nt-drawer__content">
-    <StackLayout row="0" class="nt-drawer__header">
-      <Image class="nt-drawer__header-image fas t-36" src="font://&#xf2bd;"></Image>
-      <Label class="nt-drawer__header-brand" text="User Name"></Label>
-      <Label class="nt-drawer__header-footnote" text="username@mail.com"></Label>
+    <StackLayout row="0" class="drawer-header">
+      <Image class="header-img" src="~/app/assets/rounded.png"></Image>
     </StackLayout>
 
     <ScrollView row="1" class="nt-drawer__body">
       <StackLayout>
         <GridLayout
           columns="auto, *"
-          class="nt-drawer__list-item"
+          class="{{activatedUrl === '/home' ? 'drawer-list-item-selected' : 'drawer-list-item'}}"
           [class.-selected]="isComponentSelected('/home')"
           (tap)="onNavItemTap('/home')"
         >
-          <Label col="0" text="&#xf015;" class="nt-icon fas"></Label>
-          <Label col="1" text="Home" class="p-r-10"></Label>
+          <Image col="0" src="~/app/assets/training-icon.png" class="drawer-icons"/>
+          <Label col="1" text="Apresentação" class="drawer-icon-text"></Label>
         </GridLayout>
+
+         <GridLayout
+          columns="auto, *"
+          class="{{activatedUrl === '/how-to-pray' ? 'drawer-list-item-selected' : 'drawer-list-item'}}"
+          [class.-selected]="isComponentSelected('/home')"
+          (tap)="onNavItemTap('/how-to-pray')"
+          >
+          <Image col="0" src="~/app/assets/pray-welcome-icon.png" class="drawer-icons"/>
+          <Label col="1" text="Como rezar" class="drawer-icon-text"></Label>
+        </GridLayout>
+
 
         <GridLayout
           columns="auto, *"
-          class="nt-drawer__list-item"
+          class="{{activatedUrl === '/monday' ? 'drawer-list-item-selected' : 'drawer-list-item'}}"
           [class.-selected]="isComponentSelected('/browse')"
-          (tap)="onNavItemTap('/browse')"
+          (tap)="onNavItemTap('/monday')"
         >
-          <Label col="0" text="&#xf1ea;" class="nt-icon far"></Label>
-          <Label col="1" text="Browse" class="p-r-10"></Label>
+          <Image col="0" src="~/app/assets/monday-icon.png" class="drawer-icons"/>
+          <Label col="1" text="Segunda-feira" class="drawer-icon-text"></Label>
         </GridLayout>
 
         <GridLayout
           columns="auto, *"
-          class="nt-drawer__list-item"
+          class="{{activatedUrl === '/search' ? 'drawer-list-item-selected' : 'drawer-list-item'}}"
           [class.-selected]="isComponentSelected('/search')"
           (tap)="onNavItemTap('/search')"
         >
-          <Label col="0" text="&#xf002;" class="nt-icon fas"></Label>
-          <Label col="1" text="Search" class="p-r-10"></Label>
+          <Image col="0" src="~/app/assets/tuesday-icon.png" class="drawer-icons"></Image>
+          <Label col="1" text="Terça-feira" class="drawer-icon-text"></Label>
         </GridLayout>
 
         <GridLayout
           columns="auto, *"
-          class="nt-drawer__list-item"
+          class="{{activatedUrl === '/featured' ? 'drawer-list-item-selected' : 'drawer-list-item'}}"
           [class.-selected]="isComponentSelected('/featured')"
           (tap)="onNavItemTap('/featured')"
         >
-          <Label col="0" text="&#xf005;" class="nt-icon fas"></Label>
-          <Label col="1" text="Featured" class="p-r-10"></Label>
+          <Image col="0" src="~/app/assets/wednesday-icon.png" class="drawer-icons"></Image>
+          <Label col="1" text="Quarta-feira" class="drawer-icon-text"></Label>
         </GridLayout>
+
+         <GridLayout
+          columns="auto, *"
+          class="{{activatedUrl === '/qt' ? 'drawer-list-item-selected' : 'drawer-list-item'}}"
+          [class.-selected]="isComponentSelected('/home')"
+          (tap)="onNavItemTap('/home')"
+        >
+          <Image col="0" src="~/app/assets/thursday-icon.png" class="drawer-icons"/>
+          <Label col="1" text="Quinta-feira" class="drawer-icon-text"></Label>
+        </GridLayout>
+
+         <GridLayout
+          columns="auto, *"
+          class="{{activatedUrl === '/sex' ? 'drawer-list-item-selected' : 'drawer-list-item'}}"
+          [class.-selected]="isComponentSelected('/home')"
+          (tap)="onNavItemTap('/home')"
+        >
+          <Image col="0" src="~/app/assets/friday-icon.png" class="drawer-icons"/>
+          <Label col="1" text="Sexta-feira" class="drawer-icon-text"></Label>
+        </GridLayout>
+
+         <GridLayout
+          columns="auto, *"
+          class="{{activatedUrl === '/sab' ? 'drawer-list-item-selected' : 'drawer-list-item'}}"
+          [class.-selected]="isComponentSelected('/home')"
+          (tap)="onNavItemTap('/home')"
+        >
+          <Image col="0" src="~/app/assets/saturday-icon.png" class="drawer-icons"/>
+          <Label col="1" text="Sábado" class="drawer-icon-text"></Label>
+        </GridLayout>
+
+         <GridLayout
+          columns="auto, *"
+          class="{{activatedUrl === '/snd' ? 'drawer-list-item-selected' : 'drawer-list-item'}}"
+          [class.-selected]="isComponentSelected('/home')"
+          (tap)="onNavItemTap('/home')"
+        >
+          <Image col="0" src="~/app/assets/sunday-icon.png" class="drawer-icons"/>
+          <Label col="1" text="Domingo" class="drawer-icon-text"></Label>
+        </GridLayout>
+
+
 
         <StackLayout class="hr"></StackLayout>
 
         <GridLayout
           columns="auto, *"
-          class="nt-drawer__list-item"
+          class="drawer-list-item"
           [class.-selected]="isComponentSelected('/settings')"
           (tap)="onNavItemTap('/settings')"
         >
-          <Label col="0" text="&#xf013;" class="nt-icon fas"></Label>
-          <Label col="1" text="Settings" class="p-r-10"></Label>
+          <Image col="0" src="~/app/assets/church-icon.png" class="drawer-icons"/>
+          <Label col="1" text="Liturgia" class="drawer-icon-text"></Label>
         </GridLayout>
       </StackLayout>
     </ScrollView>
   </GridLayout>
 
   <GridLayout tkMainContent>
+    <Frame animated="true" actionBarVisibility="never">
+    <Page
+      statusBarStyle="light"
+      backgroundSpanUnderStatusBar="true"
+      androidStatusBarBackground="#FF000000">
     <page-router-outlet></page-router-outlet>
+    </Page>
+    </Frame>
   </GridLayout>
 </RadSideDrawer>

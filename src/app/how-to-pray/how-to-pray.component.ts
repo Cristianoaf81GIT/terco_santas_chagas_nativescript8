@@ -3,10 +3,11 @@ import { RadSideDrawer } from 'nativescript-ui-sidedrawer'
 import { Application } from '@nativescript/core'
 
 @Component({
-  selector: 'Browse',
-  templateUrl: './browse.component.html',
+  selector: 'HowToPray',
+  templateUrl: './how-to-pray.component.html',
 })
-export class BrowseComponent implements OnInit {
+export class HowToPrayComponent implements OnInit {
+
   constructor() {
     // Use the component constructor to inject providers.
   }
