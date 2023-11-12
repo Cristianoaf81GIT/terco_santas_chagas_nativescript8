@@ -7,11 +7,12 @@
   </GridLayout>
 </ActionBar>
 
-<StackLayout class="page__content" letterSpacing="2">
+<StackLayout class="page__content" letterSpacing="2" [ngStyle]="{'background-color': backgroundColor }">
   <Label
     class="week-misteries"
     text="1º - Jesus perdoa a mulher adultera."
     textWrap="true"
+    (tap)="onTap()"
   ></Label>
 
   <Label
@@ -38,11 +39,25 @@
     textWrap="true"
   ></Label>
 
-  <StackLayout class="references-group" letterSpacing="2">
+  <StackLayout
+    class="references-group"
+    letterSpacing="2"
+  >
     <Label text="1º Mistério (Jo 8,3-5.11)" class="evangelion-references"></Label>
     <Label text="2º Mistério (Jo 4,9-10.13-14)" class="evangelion-references"></Label>
     <Label text="3º Mistério (Jo 11,21-25)" class="evangelion-references"></Label>
     <Label text="4º Mistério (Jo 10,14-15.27)" class="evangelion-references"></Label>
     <Label text="5º Mistério (Lc 23,39-43)" class="evangelion-references"></Label>
   </StackLayout>
+
+</StackLayout>
+
+<StackLayout #bottomSheet
+  class="bottom-sheet"
+  stretchLastChild="false"
+>
+  <GridLayout columns="*,100" rows="80">
+    <label text=" " row="0" col="0"></label>
+    <Label text="X" class="close-button" row="0", col="1" (tap)="onTap()"></Label>
+  </GridLayout>
 </StackLayout>
