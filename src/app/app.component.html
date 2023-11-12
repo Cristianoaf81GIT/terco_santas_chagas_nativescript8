@@ -12,8 +12,16 @@
           [class.-selected]="isComponentSelected('/home')"
           (tap)="onNavItemTap('/home')"
         >
-          <Image col="0" src="~/app/assets/training-icon.png" class="drawer-icons"/>
-          <Label col="1" text="Apresentação" class="drawer-icon-text"></Label>
+          <Image
+            col="0"
+            src="~/app/assets/training-icon.png"
+            class="{{activatedUrl === '/home' ? 'drawer-icons-selected' : 'drawer-icons'}}"
+          />
+          <Label
+            col="1"
+            text="Apresentação"
+            class="{{activatedUrl === '/home' ? 'drawer-icon-text-selected' : 'drawer-icon-text'}}"
+          ></Label>
         </GridLayout>
 
          <GridLayout
@@ -22,8 +30,16 @@
           [class.-selected]="isComponentSelected('/home')"
           (tap)="onNavItemTap('/how-to-pray')"
           >
-          <Image col="0" src="~/app/assets/pray-welcome-icon.png" class="drawer-icons"/>
-          <Label col="1" text="Como rezar" class="drawer-icon-text"></Label>
+          <Image
+            col="0"
+            src="~/app/assets/pray-welcome-icon.png"
+            class="{{activatedUrl === '/how-to-pray' ? 'drawer-icons-selected' : 'drawer-icons'}}"
+          />
+          <Label
+            col="1"
+            text="Como rezar"
+            class="{{activatedUrl === '/how-to-pray' ? 'drawer-icon-text-selected' : 'drawer-icon-text'}}"
+          ></Label>
         </GridLayout>
 
 
@@ -33,8 +49,16 @@
           [class.-selected]="isComponentSelected('/browse')"
           (tap)="onNavItemTap('/monday')"
         >
-          <Image col="0" src="~/app/assets/monday-icon.png" class="drawer-icons"/>
-          <Label col="1" text="Segunda-feira" class="drawer-icon-text"></Label>
+          <Image
+            col="0"
+            src="~/app/assets/monday-icon.png"
+            class="{{activatedUrl === '/monday' ? 'drawer-icons-selected' : 'drawer-icons'}}"
+          />
+          <Label
+            col="1"
+            text="Segunda-feira"
+            class="{{activatedUrl === '/monday' ? 'drawer-icon-text-selected' : 'drawer-icon-text'}}"
+          ></Label>
         </GridLayout>
 
         <GridLayout
@@ -43,8 +67,16 @@
           [class.-selected]="isComponentSelected('/search')"
           (tap)="onNavItemTap('/search')"
         >
-          <Image col="0" src="~/app/assets/tuesday-icon.png" class="drawer-icons"></Image>
-          <Label col="1" text="Terça-feira" class="drawer-icon-text"></Label>
+          <Image
+            col="0"
+            src="~/app/assets/tuesday-icon.png"
+            class="{{activatedUrl === '/search' ? 'drawer-icons-selected' : 'drawer-icons'}}"
+          ></Image>
+          <Label
+            col="1"
+            text="Terça-feira"
+            class="{{activatedUrl === '/search' ? 'drawer-icon-text-selected' : 'drawer-icon-text'}}"
+          ></Label>
         </GridLayout>
 
         <GridLayout
@@ -53,8 +85,16 @@
           [class.-selected]="isComponentSelected('/featured')"
           (tap)="onNavItemTap('/featured')"
         >
-          <Image col="0" src="~/app/assets/wednesday-icon.png" class="drawer-icons"></Image>
-          <Label col="1" text="Quarta-feira" class="drawer-icon-text"></Label>
+          <Image
+            col="0"
+            src="~/app/assets/wednesday-icon.png"
+            class="{{activatedUrl === '/featured' ? 'drawer-icons-selected' : 'drawer-icons'}}"
+          ></Image>
+          <Label
+            col="1"
+            text="Quarta-feira"
+            class="{{activatedUrl === '/featured' ? 'drawer-icon-text-selected' : 'drawer-icon-text'}}"
+          ></Label>
         </GridLayout>
 
          <GridLayout
@@ -63,8 +103,15 @@
           [class.-selected]="isComponentSelected('/home')"
           (tap)="onNavItemTap('/home')"
         >
-          <Image col="0" src="~/app/assets/thursday-icon.png" class="drawer-icons"/>
-          <Label col="1" text="Quinta-feira" class="drawer-icon-text"></Label>
+          <Image col="0"
+            src="~/app/assets/thursday-icon.png"
+            class="{{activatedUrl === '/qt' ? 'drawer-icons-selected' : 'drawer-icons'}}"
+          />
+          <Label
+            col="1"
+            text="Quinta-feira"
+            class="{{activatedUrl === '/qt' ? 'drawer-icon-text-selected' : 'drawer-icon-text'}}"
+          ></Label>
         </GridLayout>
 
          <GridLayout
@@ -73,8 +120,16 @@
           [class.-selected]="isComponentSelected('/home')"
           (tap)="onNavItemTap('/home')"
         >
-          <Image col="0" src="~/app/assets/friday-icon.png" class="drawer-icons"/>
-          <Label col="1" text="Sexta-feira" class="drawer-icon-text"></Label>
+          <Image
+            col="0"
+            src="~/app/assets/friday-icon.png"
+            class="{{activatedUrl === '/sex' ? 'drawer-icons-selected' : 'drawer-icons'}}"
+          />
+          <Label
+            col="1"
+            text="Sexta-feira"
+            class="{{activatedUrl === '/sex' ? 'drawer-icon-text-selected' : 'drawer-icon-text'}}"
+          ></Label>
         </GridLayout>
 
          <GridLayout
@@ -83,8 +138,16 @@
           [class.-selected]="isComponentSelected('/home')"
           (tap)="onNavItemTap('/home')"
         >
-          <Image col="0" src="~/app/assets/saturday-icon.png" class="drawer-icons"/>
-          <Label col="1" text="Sábado" class="drawer-icon-text"></Label>
+          <Image
+            col="0"
+            src="~/app/assets/saturday-icon.png"
+            class="{{activatedUrl === '/sab' ? 'drawer-icons-selected' : 'drawer-icons'}}"
+          />
+          <Label
+            col="1"
+            text="Sábado"
+            class="{{activatedUrl === '/sab' ? 'drawer-icon-text-selected' : 'drawer-icon-text'}}"
+          ></Label>
         </GridLayout>
 
          <GridLayout
@@ -93,8 +156,15 @@
           [class.-selected]="isComponentSelected('/home')"
           (tap)="onNavItemTap('/home')"
         >
-          <Image col="0" src="~/app/assets/sunday-icon.png" class="drawer-icons"/>
-          <Label col="1" text="Domingo" class="drawer-icon-text"></Label>
+          <Image col="0"
+            src="~/app/assets/sunday-icon.png"
+            class="{{activatedUrl === '/snd' ? 'drawer-icons-selected' : 'drawer-icons'}}"
+          />
+          <Label
+            col="1"
+            text="Domingo"
+            class="{{activatedUrl === '/snd' ? 'drawer-icon-text-selected' : 'drawer-icon-text'}}"
+          ></Label>
         </GridLayout>
 
 
@@ -107,7 +177,11 @@
           [class.-selected]="isComponentSelected('/settings')"
           (tap)="onNavItemTap('/settings')"
         >
-          <Image col="0" src="~/app/assets/church-icon.png" class="drawer-icons"/>
+          <Image
+            col="0"
+            src="~/app/assets/church-icon.png"
+            class="{{activatedUrl === '/settings' ? 'drawer-icons-selected' : 'drawer-icons'}}"
+          />
           <Label col="1" text="Liturgia" class="drawer-icon-text"></Label>
         </GridLayout>
       </StackLayout>

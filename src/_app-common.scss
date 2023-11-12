@@ -102,36 +102,69 @@
 }
 
 .drawer-icons {
-  width: 30;
-  height: 30;
-  margin: 5;
+  width: 16;
+  height: 16;
+  margin: 2;
+  &-selected {
+    transform: scale(1.05,1.05);
+  }
 }
 
 .drawer-icon-text {
   color: #D19E1D;
   font-family: "Parisienne", "Parisienne-Regular";
-  font-size: 18;
-  margin: 5;
-  margin-left: 10;
+  font-size: 16;
+  margin: 2;
+  margin-left: 16;
+  &-selected {
+    font-family: "Parisienne", "Parisienne-Regular";
+    margin: 2;
+    margin-left: 16;
+    font-size: 20;
+  }
 }
 
 .drawer-list-item {
   color: #D19E1D;
-  margin: 5;
+  margin: 2;
   &-selected {
     background-color: #183486;
-    margin: 5;
+    margin: 4;
     color: #D19E1D;
+    padding: 8;
+    border-radius: 5;
   }
   &:focus {
     background-color: #183486;
-    margin: 5;
+    margin: 2;
     color: #D19E1D;
   }
   &:blur {
     background-color: transparent;
-    margin: 5;
+    margin: 2;
     color: #D19E1D;
+  }
+}
+
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(0.75, 0.75);
+  }
+
+  25% {
+    transform: scale(0.8, 0.8);
+  }
+
+  50% {
+    transform: scale(0.85, 0.85);
+  }
+
+  75% {
+    transform: scale(0.95, 0.95);
+  }
+
+  100% {
+    transform: scale(1.0, 1.0);
   }
 }
 
