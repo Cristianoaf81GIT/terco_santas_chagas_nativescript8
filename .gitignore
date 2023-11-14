@@ -26,3 +26,8 @@ typings/
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+# http tests
+http/
+./http/
+http/*.*
