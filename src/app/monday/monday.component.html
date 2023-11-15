@@ -12,31 +12,35 @@
     class="week-misteries"
     text="1º - Jesus perdoa a mulher adultera."
     textWrap="true"
-    (tap)="onTap()"
+    (tap)="onTap(1)"
   ></Label>
 
   <Label
     class="week-misteries"
     text="2º - Jesus se oferece como água viva."
     textWrap="true"
+    (tap)="onTap(2)"
   ></Label>
 
   <Label
     class="week-misteries"
     text="3º - Jesus consola a irmã de Lázaro."
     textWrap="true"
+    (tap)="onTap(3)"
   ></Label>
 
   <Label
     class="week-misteries"
     text="4º - Jesus se manifesta como bom pastor."
     textWrap="true"
+    (tap)="onTap(4)"
   ></Label>
 
   <Label
     class="week-misteries"
     text="5º - Jesus perdoa o bom ladrão."
     textWrap="true"
+    (tap)="onTap(5)"
   ></Label>
 
   <StackLayout
@@ -58,6 +62,17 @@
 >
   <GridLayout columns="*,100" rows="80">
     <label text=" " row="0" col="0"></label>
-    <Label text="X" class="close-button" row="0", col="1" (tap)="onTap()"></Label>
+    <Label text="X" class="close-button" row="0", col="1" (tap)="onTap(0)"></Label>
   </GridLayout>
+
+  <FlexLayout
+    flexDirection="column"
+    justifyContent="center"
+    alignItems="center"
+
+  >
+    <ActivityIndicator busy="{{loading}}" class="activity-indicator">
+    </ActivityIndicator>
+
+  </FlexLayout>
 </StackLayout>

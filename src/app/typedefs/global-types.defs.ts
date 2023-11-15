@@ -1,5 +1,5 @@
 
-export type TMisteriesNumber = 1 | 2 | 3 | 4 | 5;
+export type TMisteriesNumber =  1 | 2 | 3 | 4 | 5;
 
 export type TWeekday = 'mon' | 'tue' | 'wed' | 'thu' | 'fri' | 'sat' | 'sun';
 
@@ -12,7 +12,8 @@ export type TEvangelionRecord = {
 }
 
 export type TEvangelion = {
-  [k : number]: TEvangelionRecord };
+  [k : number]: TEvangelionRecord
+};
 
 export interface IHttpClientMethods {
   getText({ book, chapter, start, end }: TEvangelionRecord): Promise<unknown>;
