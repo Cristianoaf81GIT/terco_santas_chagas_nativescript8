@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
 import { Application, StackLayout, CoreTypes } from '@nativescript/core';
 import { TEvangelion, TEvangelionRecord, TMisteriesNumber  } from '../typedefs/global-types.defs';
@@ -9,7 +9,7 @@ import { HttpServices } from '../services/http.service';
   templateUrl: './monday.component.html',
   styleUrls: ['monday.scss']
 })
-export class MondayComponent implements OnInit {
+export class MondayComponent implements OnInit, OnDestroy {
 
   @ViewChild('bottomSheet')
   private bottomSheet!: any;
@@ -26,9 +26,26 @@ export class MondayComponent implements OnInit {
 
   loading: boolean = false;
 
+  evangelionText: string = '';
+
+  private timer: any = null;
+
+  selectedWeekDay: TEvangelionRecord | null = null;
+
+  misteryTitle: string | null = null;
+
   constructor(private readonly http: HttpServices) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  ngOnDestroy(): void {
+    if(this.timer !== null) {
+      clearTimeout(this.timer);
+      this.timer = null;
+      this.evangelionText = '';
+      this.selectedWeekDay = null;
+      this.misteryTitle = null;
+    }
   }
 
   onDrawerButtonTap(): void {
@@ -37,7 +54,7 @@ export class MondayComponent implements OnInit {
   }
 
   async onTap(day: TMisteriesNumber | 0) {
-    this.loading = !this.loading;
+    this.loading = true;
     if (this.bottomSheet !== null) {
       const elm = this.bottomSheet.nativeElement as StackLayout;
       const { height } = elm.getActualSize();
@@ -45,21 +62,29 @@ export class MondayComponent implements OnInit {
       elm.animate({
         height: height <= 0 ? '100%' : '0%',
         curve: CoreTypes.AnimationCurve.cubicBezier(.18,.43,.78,.49),
-        duration: 1000
+        duration: 100
       });
     }
 
     if (day > 0) {
       const {book, chapter, start, end} = this.misteries[day];
+      this.misteryTitle = `${book}, ${chapter} ${start} - ${end}`.toUpperCase();
+      this.selectedWeekDay = this.misteries[day];
       const response = await this.http.getText({
         book,
         chapter,
         start,
         end
       } as TEvangelionRecord);
-      console.log(response);
+      this.timer = setTimeout(() => {
+        this.evangelionText = response;
+        this.loading = false;
+      }, 500);
+    } else {
+      this.evangelionText = '';
       this.loading = false;
+      this.selectedWeekDay = null;
+      this.misteryTitle = null;
     }
-
   }
 }

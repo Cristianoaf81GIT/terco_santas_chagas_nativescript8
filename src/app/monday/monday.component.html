@@ -65,14 +65,33 @@
     <Label text="X" class="close-button" row="0", col="1" (tap)="onTap(0)"></Label>
   </GridLayout>
 
+  <Label
+    class="mistery-title"
+    text="{{misteryTitle ? misteryTitle : ''}}"
+  >
+  </Label>
+
   <FlexLayout
     flexDirection="column"
     justifyContent="center"
     alignItems="center"
 
   >
-    <ActivityIndicator busy="{{loading}}" class="activity-indicator">
-    </ActivityIndicator>
+    <ScrollView class="scrollview">
 
+      <ActivityIndicator
+        busy="{{loading}}"
+        class="activity-indicator"
+        *ngIf="evangelionText.length === 0; else elseBlock"
+      />
+      <ng-template #elseBlock>
+        <Label
+          class="evangelion-text"
+          text="{{evangelionText}}"
+          textWrap="true">
+        </Label>
+      </ng-template>
+    </ScrollView>
   </FlexLayout>
+
 </StackLayout>

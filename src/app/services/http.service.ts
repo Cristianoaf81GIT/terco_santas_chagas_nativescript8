@@ -7,7 +7,7 @@ import { IHttpClientMethods, TEvangelionRecord, TEvangelionResponse } from '../t
 export class HttpServices implements IHttpClientMethods {
 
   private readonly _baseUrl: string = 'https://www.abibliadigital.com.br/api/verses/acf/';
-  private readonly _userToken: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ik1vbiBOb3YgMTMgMjAyMyAyMzoyNzo1MCBHTVQrMDAwMC5jcmlzdGlhbm9hZjgxQGdtYWlsLmNvbSIsImlhdCI6MTY5OTkxODA3MH0.1_oESQlG7ggeeyXs_KpHbXtdeebD1RkQ8zD_u94tkuc';
+  private readonly _userToken: string = '';
   private _connectionType: number = -1;
 
   /* *
@@ -27,10 +27,8 @@ export class HttpServices implements IHttpClientMethods {
         resultJson.verses.forEach((verse) => {
           if (verse && verse.number >= start && verse.number <= end) {
             stringResult += verse.text + '\n';
-            console.log(stringResult)
           }
         });
-        console.log('final: ',stringResult);
         return stringResult;
       } catch (error) {
         console.log('error: ',error)
