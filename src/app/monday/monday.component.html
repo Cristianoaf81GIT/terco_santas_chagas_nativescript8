@@ -7,52 +7,57 @@
   </GridLayout>
 </ActionBar>
 
-<StackLayout class="page__content" letterSpacing="2" [ngStyle]="{'background-color': backgroundColor }">
-  <Label
-    class="week-misteries"
+<StackLayout
+  class="page__content"
+  letterSpacing="2"
+  [ngStyle]="{'background-color': backgroundColor }"
+>
+  <Button
+    class="week-misteries week-misteries-active"
     text="1º - Jesus perdoa a mulher adultera."
     textWrap="true"
     (tap)="onTap(1)"
-  ></Label>
+  ></Button>
 
-  <Label
-    class="week-misteries"
+  <Button
+    class="week-misteries week-misteries-active"
     text="2º - Jesus se oferece como água viva."
     textWrap="true"
     (tap)="onTap(2)"
-  ></Label>
+  ></Button>
 
-  <Label
-    class="week-misteries"
+  <Button
+    class="week-misteries week-misteries-active"
     text="3º - Jesus consola a irmã de Lázaro."
     textWrap="true"
     (tap)="onTap(3)"
-  ></Label>
+  ></Button>
 
-  <Label
-    class="week-misteries"
+  <Button
+    class="week-misteries week-misteries-active"
     text="4º - Jesus se manifesta como bom pastor."
     textWrap="true"
     (tap)="onTap(4)"
-  ></Label>
+  ></Button>
 
-  <Label
-    class="week-misteries"
+  <Button
+    class="week-misteries week-misteries-active"
     text="5º - Jesus perdoa o bom ladrão."
     textWrap="true"
     (tap)="onTap(5)"
-  ></Label>
+  ></Button>
 
-  <StackLayout
-    class="references-group"
-    letterSpacing="2"
-  >
-    <Label text="1º Mistério (Jo 8,3-5.11)" class="evangelion-references"></Label>
-    <Label text="2º Mistério (Jo 4,9-10.13-14)" class="evangelion-references"></Label>
-    <Label text="3º Mistério (Jo 11,21-25)" class="evangelion-references"></Label>
-    <Label text="4º Mistério (Jo 10,14-15.27)" class="evangelion-references"></Label>
-    <Label text="5º Mistério (Lc 23,39-43)" class="evangelion-references"></Label>
-  </StackLayout>
+   <StackLayout
+      class="references-group"
+      letterSpacing="2"
+      *ngIf="!loading"
+    >
+      <Label text="1º Mistério (Jo 8,3-5.11)" class="evangelion-references"></Label>
+      <Label text="2º Mistério (Jo 4,9-10.13-14)" class="evangelion-references"></Label>
+      <Label text="3º Mistério (Jo 11,21-25)" class="evangelion-references"></Label>
+      <Label text="4º Mistério (Jo 10,14-15.27)" class="evangelion-references"></Label>
+      <Label text="5º Mistério (Lc 23,39-43)" class="evangelion-references"></Label>
+    </StackLayout>
 
 </StackLayout>
 
