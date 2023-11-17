@@ -16,5 +16,9 @@
             }.
         2 - create a dialog service to show alerts. [ok]
         3 - create a httpClientService to requests evangelion data for each misteries.[ok]
-        4 - add httpClientService into week rosary misteries components [pending]
+        4 - add httpClientService into week rosary misteries components [ok]
+    ```
+
+    ```
+        1 - create a wednesday component and change it, with css classes. [pending]
     ```

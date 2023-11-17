@@ -7,13 +7,13 @@ import { IHttpClientMethods, TEvangelionRecord, TEvangelionResponse } from '../t
 export class HttpServices implements IHttpClientMethods {
 
   private readonly _baseUrl: string = 'https://www.abibliadigital.com.br/api/verses/acf/';
-  private readonly _userToken: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ik1vbiBOb3YgMTMgMjAyMyAyMzoyNzo1MCBHTVQrMDAwMC5jcmlzdGlhbm9hZjgxQGdtYWlsLmNvbSIsImlhdCI6MTY5OTkxODA3MH0.1_oESQlG7ggeeyXs_KpHbXtdeebD1RkQ8zD_u94tkuc';
+  private readonly _userToken: string = '';
   private _connectionType: number = -1;
 
   /* *
    * Returns a mistery evangelion text.
    * @param {TEvangelionRecord} object
-   * @return {Promise<string>} string with evangelion text
+   * @Returns {Promise<string>} evangelion text.
    * **/
   async getText({ book, end, start, chapter }: TEvangelionRecord): Promise<string> {
     if (this.checkConnection()) {
@@ -37,7 +37,7 @@ export class HttpServices implements IHttpClientMethods {
           message: 'Erro ao requisitar dados do servidor',
           okButtonText: 'ok'
         });
-        return "SEM DADOS PARA EXIBIÇÂO";
+        throw error;
       }
     } else {
       Dialogs.alert({
@@ -45,8 +45,7 @@ export class HttpServices implements IHttpClientMethods {
         message: 'Não há conexão de rede para efetuar a requisição!',
         okButtonText: 'ok'
       });
-     // throw new Error('No Internet Connection Error!');
-      return "SEM CONEXÂO";
+      throw new Error('No Internet Connection Error!');
     }
 
   }

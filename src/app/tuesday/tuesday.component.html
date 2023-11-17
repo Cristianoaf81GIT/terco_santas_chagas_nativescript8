@@ -1,0 +1,115 @@
+<ActionBar class="action-bar">
+  <NavigationButton visibility="hidden"></NavigationButton>
+  <GridLayout columns="50, *">
+    <Label class="action-bar-title" text="Terça-feira" colSpan="2"></Label>
+
+    <Label class="fas" text="&#xf0c9;" (tap)="onDrawerButtonTap()"></Label>
+  </GridLayout>
+</ActionBar>
+
+<StackLayout
+  class="page__content"
+  letterSpacing="2"
+  [ngStyle]="{'background-color': backgroundColor }"
+>
+  <Button
+    class="week-misteries week-misteries-active"
+    text="1º - A Traição de Judas e a prisão de Jesus."
+    textWrap="true"
+    (tap)="onTap(1)"
+  ></Button>
+
+  <Button
+    class="week-misteries week-misteries-active"
+    text="2º - A Condenação de Jesus à morte."
+    textWrap="true"
+    (tap)="onTap(2)"
+  ></Button>
+
+  <Button
+    class="week-misteries week-misteries-active"
+    text="3º - Jesus é pregado na cruz."
+    textWrap="true"
+    (tap)="onTap(3)"
+  ></Button>
+
+  <Button
+    class="week-misteries week-misteries-active"
+    text="4º - Entregando-se ao Pai, Jesus morre na cruz."
+    textWrap="true"
+    (tap)="onTap(4)"
+  ></Button>
+
+  <Button
+    class="week-misteries week-misteries-active"
+    text="5º - Jesus é transpassado pela lança do soldado."
+    textWrap="true"
+    (tap)="onTap(5)"
+  ></Button>
+
+   <StackLayout
+      class="references-group"
+      letterSpacing="2"
+      *ngIf="!loading"
+    >
+      <Label text="1º Mistério (Lc 22, 47-48.54a)" class="evangelion-references"></Label>
+      <Label text="2º Mistério (Mc 15, 12-15)" class="evangelion-references"></Label>
+      <Label text="3º Mistério (Mc 15, 22-25)" class="evangelion-references"></Label>
+      <Label text="4º Mistério (Lc 23, 44-46)" class="evangelion-references"></Label>
+      <Label text="5º Mistério (Jo 19, 32-34)" class="evangelion-references"></Label>
+    </StackLayout>
+
+</StackLayout>
+
+<StackLayout #bottomSheet
+  class="bottom-sheet"
+  stretchLastChild="false"
+>
+  <GridLayout columns="*,100" rows="80">
+    <label text=" " row="0" col="0"></label>
+    <Label text="X" class="close-button" row="0", col="1" (tap)="onTap(0)"></Label>
+  </GridLayout>
+
+  <Label
+    class="mistery-title"
+    text="{{misteryTitle ? misteryTitle : ''}}"
+  >
+  </Label>
+
+  <FlexLayout
+    flexDirection="column"
+    justifyContent="center"
+    alignItems="center"
+
+  >
+    <ScrollView class="scrollview">
+
+      <ActivityIndicator
+        busy="{{loading}}"
+        class="activity-indicator"
+        *ngIf="evangelionText.length === 0; else elseBlock"
+      />
+      <ng-template #elseBlock>
+        <Label
+          class="evangelion-text"
+          text="{{evangelionText}}"
+          textWrap="true">
+        </Label>
+      </ng-template>
+    </ScrollView>
+  </FlexLayout>
+
+</StackLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+

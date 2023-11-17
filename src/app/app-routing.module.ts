@@ -17,8 +17,8 @@ const routes: Routes = [
     loadChildren: () => import('~/app/monday/monday.module').then((m) => m.MondayModule),
   },
   {
-    path: 'search',
-    loadChildren: () => import('~/app/search/search.module').then((m) => m.SearchModule),
+    path: 'tuesday',
+    loadChildren: () => import('~/app/tuesday/tuesday.module').then((m) => m.TuesDayModule),
   },
   {
     path: 'featured',
