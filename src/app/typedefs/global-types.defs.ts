@@ -36,3 +36,9 @@ export type TEvangelionResponse = {
   };
   verses: Array<{number: number, text: string}>;
 }
+
+export declare type TMisteryText = {
+  [k: string]: {
+    [k: number]: string
+  }
+} & object;

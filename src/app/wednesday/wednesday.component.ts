@@ -11,19 +11,19 @@ import { HttpServices } from "../services/http.service";
 import { StorageServices } from "../services/storage.service";
 
 @Component({
-  selector: "Browse",
-  templateUrl: "./tuesday.component.html",
+  selector: "Feature",
+  templateUrl: "./wednesday.component.html",
 })
-export class TuesDayComponent implements OnInit, OnDestroy {
+export class WednesdayComponent implements OnInit, OnDestroy {
   @ViewChild("bottomSheet")
   private bottomSheet!: any;
 
   private misteries: TEvangelion = {
-    1: { book: "lc", chapter: 22, start: 47, end: 54, weekday: "tue" },
-    2: { book: "mc", chapter: 15, start: 12, end: 15, weekday: "tue" },
-    3: { book: "mc", chapter: 15, start: 22, end: 25, weekday: "tue" },
-    4: { book: "lc", chapter: 23, start: 44, end: 46, weekday: "tue" },
-    5: { book: "jo", chapter: 19, start: 32, end: 34, weekday: "tue" },
+    1: { book: "jo", chapter: 20, start: 15, end: 16, weekday: "wed" },
+    2: { book: "lc", chapter: 24, start: 13, end: 15, weekday: "wed" },
+    3: { book: "lc", chapter: 24, start: 36, end: 40, weekday: "wed" },
+    4: { book: "jo", chapter: 20, start: 26, end: 28, weekday: "wed" },
+    5: { book: "mt", chapter: 28, start: 16, end: 20, weekday: "wed" },
   };
 
   backgroundColor = "#fff";
@@ -108,3 +108,4 @@ export class TuesDayComponent implements OnInit, OnDestroy {
     }
   }
 }
+
