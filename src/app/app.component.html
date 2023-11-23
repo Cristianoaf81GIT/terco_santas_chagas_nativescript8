@@ -88,29 +88,29 @@
           <Image
             col="0"
             src="~/app/assets/wednesday-icon.png"
-            class="{{activatedUrl === '/featured' ? 'drawer-icons-selected' : 'drawer-icons'}}"
+            class="{{activatedUrl === '/wednesday' ? 'drawer-icons-selected' : 'drawer-icons'}}"
           ></Image>
           <Label
             col="1"
             text="Quarta-feira"
-            class="{{activatedUrl === '/featured' ? 'drawer-icon-text-selected' : 'drawer-icon-text'}}"
+            class="{{activatedUrl === '/wednesday' ? 'drawer-icon-text-selected' : 'drawer-icon-text'}}"
           ></Label>
         </GridLayout>
 
          <GridLayout
           columns="auto, *"
-          class="{{activatedUrl === '/qt' ? 'drawer-list-item-selected' : 'drawer-list-item'}}"
-          [class.-selected]="isComponentSelected('/home')"
-          (tap)="onNavItemTap('/home')"
+          class="{{activatedUrl === '/thursday' ? 'drawer-list-item-selected' : 'drawer-list-item'}}"
+          [class.-selected]="isComponentSelected('/thursday')"
+          (tap)="onNavItemTap('/thursday')"
         >
           <Image col="0"
             src="~/app/assets/thursday-icon.png"
-            class="{{activatedUrl === '/qt' ? 'drawer-icons-selected' : 'drawer-icons'}}"
+            class="{{activatedUrl === '/thursday' ? 'drawer-icons-selected' : 'drawer-icons'}}"
           />
           <Label
             col="1"
             text="Quinta-feira"
-            class="{{activatedUrl === '/qt' ? 'drawer-icon-text-selected' : 'drawer-icon-text'}}"
+            class="{{activatedUrl === '/thursday' ? 'drawer-icon-text-selected' : 'drawer-icon-text'}}"
           ></Label>
         </GridLayout>
 
