@@ -1,6 +1,7 @@
 import { AppLaunchView } from "@nativescript/angular";
 import { GridLayout, Image } from "@nativescript/core";
 
+
 export class LaunchAnimation extends GridLayout implements AppLaunchView {
   circle: GridLayout;
   image: Image;
@@ -14,7 +15,6 @@ export class LaunchAnimation extends GridLayout implements AppLaunchView {
     // construct any creative animation
     this.circle = new GridLayout();
     this.image = new Image();
-
     this.circle.width = 120;
     this.circle.height = 120;
     this.circle.borderRadius = 120 / 2;

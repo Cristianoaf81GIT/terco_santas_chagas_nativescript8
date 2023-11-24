@@ -3,6 +3,6 @@ export const asyncBoot = (): Function => {
     new Promise((resolve) => {
       setTimeout(() => {
         resolve();
-      }, 2000);
+      }, 1000);
     });
 };
