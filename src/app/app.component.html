@@ -116,19 +116,19 @@
 
          <GridLayout
           columns="auto, *"
-          class="{{activatedUrl === '/sex' ? 'drawer-list-item-selected' : 'drawer-list-item'}}"
-          [class.-selected]="isComponentSelected('/home')"
-          (tap)="onNavItemTap('/home')"
+          class="{{activatedUrl === '/friday' ? 'drawer-list-item-selected' : 'drawer-list-item'}}"
+          [class.-selected]="isComponentSelected('/friday')"
+          (tap)="onNavItemTap('/friday')"
         >
           <Image
             col="0"
             src="~/app/assets/friday-icon.png"
-            class="{{activatedUrl === '/sex' ? 'drawer-icons-selected' : 'drawer-icons'}}"
+            class="{{activatedUrl === '/friday' ? 'drawer-icons-selected' : 'drawer-icons'}}"
           />
           <Label
             col="1"
             text="Sexta-feira"
-            class="{{activatedUrl === '/sex' ? 'drawer-icon-text-selected' : 'drawer-icon-text'}}"
+            class="{{activatedUrl === '/friday' ? 'drawer-icon-text-selected' : 'drawer-icon-text'}}"
           ></Label>
         </GridLayout>
 
