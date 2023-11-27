@@ -134,19 +134,19 @@
 
          <GridLayout
           columns="auto, *"
-          class="{{activatedUrl === '/sab' ? 'drawer-list-item-selected' : 'drawer-list-item'}}"
-          [class.-selected]="isComponentSelected('/home')"
-          (tap)="onNavItemTap('/home')"
+          class="{{activatedUrl === '/saturday' ? 'drawer-list-item-selected' : 'drawer-list-item'}}"
+          [class.-selected]="isComponentSelected('/saturday')"
+          (tap)="onNavItemTap('/saturday')"
         >
           <Image
             col="0"
             src="~/app/assets/saturday-icon.png"
-            class="{{activatedUrl === '/sab' ? 'drawer-icons-selected' : 'drawer-icons'}}"
+            class="{{activatedUrl === '/saturday' ? 'drawer-icons-selected' : 'drawer-icons'}}"
           />
           <Label
             col="1"
             text="Sábado"
-            class="{{activatedUrl === '/sab' ? 'drawer-icon-text-selected' : 'drawer-icon-text'}}"
+            class="{{activatedUrl === '/saturday' ? 'drawer-icon-text-selected' : 'drawer-icon-text'}}"
           ></Label>
         </GridLayout>
 

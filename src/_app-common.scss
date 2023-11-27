@@ -194,16 +194,16 @@
 .week-misteries {
   font-family: "Parisienne", "Parisienne-Regular";
   font-weight: 100;
-  font-size: 21;
+  font-size: 20;
   text-align: center;
   margin-right: 5%;
   margin-left: 5%;
-  margin-top: 15;
-  margin-bottom: 15;
+  margin-top: 8;
+  margin-bottom: 8;
   background-color: transparent;
   border-width: 0.5;
   border-color: #000;
-  height: 60;
+  height: 70;
   z-index: 0;
   border-radius: 12;
   &:active {
@@ -211,7 +211,7 @@
     border-color: transparent;
     border-width: 0;
     border-radius: 12;
-    height: 60;
+    height: 70;
   }
 }
 
