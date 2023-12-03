@@ -37,6 +37,10 @@ const routes: Routes = [
     loadChildren: () => import('~/app/saturday/saturday.module').then((m) => m.SaturdayModule),
   },
   {
+    path: 'sunday',
+    loadChildren: () => import('~/app/sunday/sunday.module').then((m) => m.SundaydayModule)
+  },
+  {
     path: 'settings',
     loadChildren: () => import('~/app/settings/settings.module').then((m) => m.SettingsModule),
   },

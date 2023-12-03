@@ -29,7 +29,7 @@ export class LaunchAnimation extends GridLayout implements AppLaunchView {
 
   async startAnimation() {
     await this.circle.animate({
-      scale: { x: 12, y: 12 },
+      scale: { x: 3, y: 3 },
       duration: 100,
     });
 
@@ -38,10 +38,10 @@ export class LaunchAnimation extends GridLayout implements AppLaunchView {
       duration: 100,
     });
 
-    await this.circle.animate({
+    /*await this.circle.animate({
       scale: { x: 3, y: 3 },
       duration: 100,
-    });
+    });*/
 
     await this.circle.animate({
       scale: { x: 12, y: 12 },
