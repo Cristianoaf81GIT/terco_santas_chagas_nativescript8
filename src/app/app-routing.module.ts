@@ -41,9 +41,13 @@ const routes: Routes = [
     loadChildren: () => import('~/app/sunday/sunday.module').then((m) => m.SundaydayModule)
   },
   {
-    path: 'settings',
-    loadChildren: () => import('~/app/settings/settings.module').then((m) => m.SettingsModule),
+    path: 'liturgy',
+    loadChildren: () => import('~/app/liturgy/liturgy.module').then((m) => m.LiturgyModule),
   },
+  {
+    path: 'novena',
+    loadChildren: () => import('~/app/novena/novena.module').then((m) => m.NovenaModule)
+  }
 ]
 
 @NgModule({

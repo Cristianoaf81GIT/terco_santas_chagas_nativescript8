@@ -45,7 +45,7 @@ export class LaunchAnimation extends GridLayout implements AppLaunchView {
 
     await this.circle.animate({
       scale: { x: 12, y: 12 },
-      duration: 1000,
+      duration: 800,
     });
 
     await this.circle.animate({

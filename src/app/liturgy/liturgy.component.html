@@ -1,0 +1,105 @@
+<ActionBar class="action-bar">
+  <NavigationButton visibility="hidden"></NavigationButton>
+  <GridLayout columns="50, *">
+    <label class="action-bar-title" text="Liturgia-diária" colSpan="2"></label>
+
+    <label class="fas" text="&#xf0c9;" (tap)="onDrawerButtonTap()"></label>
+  </GridLayout>
+</ActionBar>
+
+<StackLayout class="page_content" letterSpacing="2" style="padding: 5">
+  <StackLayout class="liturgy-container">
+    <GridLayout columns="120,300" rows="30,30">
+      <label
+        col="0"
+        row="0"
+        text="{{liturgyData.data}}"
+        class="liturgy liturgy-title"
+      ></label>
+      <label
+        col="1"
+        row="0"
+        text="{{liturgyData.liturgia}}"
+        class="liturgy liturgy-title"
+      ></label>
+    </GridLayout>
+
+    <GridLayout columns="200,300" rows="30,30">
+      <label col="0" row="0" text="Cor:" class="liturgy liturgy-title"></label>
+      <label col="1" row="0" text="{{liturgyData.cor}}" class="liturgy"></label>
+    </GridLayout>
+
+    <GridLayout columns="200,300" rows="30,30">
+      <label
+        col="0"
+        row="0"
+        text="Primeira Leitura:"
+        class="liturgy liturgy-title"
+      ></label>
+      <label col="1" row="0" text="{{firstReading}}" class="liturgy"></label>
+    </GridLayout>
+
+    <GridLayout
+      columns="200,300"
+      rows="30,30"
+      *ngIf="secondReading && secondReading.length > 0"
+    >
+      <label
+        col="0"
+        row="0"
+        *ngIf="secondReading && secondReading.length > 0"
+        text="Segunda Leitura:"
+        class="liturgy liturgy-title"
+      >
+      </label>
+      <label
+        col="1"
+        row="0"
+        *ngIf="secondReading && secondReading.length > 0"
+        text="{{secondReading}}"
+        class="liturgy"
+      >
+      </label>
+    </GridLayout>
+
+    <GridLayout columns="200,300" rows="30,30">
+      <label
+        col="0"
+        row="0"
+        text="Salmo:"
+        class="liturgy liturgy-title"
+      ></label>
+      <label col="1" row="0" text="{{psalm}}" class="liturgy"></label>
+    </GridLayout>
+
+    <GridLayout columns="200,300" rows="30,30">
+      <label
+        col="0"
+        row="0"
+        text="Evangelho:"
+        class="liturgy liturgy-title"
+      ></label>
+      <label col="1" row="0" text="{{evangelion}}" class="liturgy"></label>
+    </GridLayout>
+  </StackLayout>
+
+  <ScrollView
+    class="scrollview"
+    style="height: 110%; padding: 5"
+    scrollBarIndicatorVisible="true"
+    orientation="vertical"
+  >
+    <label
+      class="liturgy-evangelion"
+      text="{{evangelionText}}"
+      textWrap="true"
+      style="
+        font-size: 18;
+        word-break: break-word;
+        text-align: justify;
+        text-justify: inter-word;
+      "
+    >
+    </label>
+  </ScrollView>
+</StackLayout>

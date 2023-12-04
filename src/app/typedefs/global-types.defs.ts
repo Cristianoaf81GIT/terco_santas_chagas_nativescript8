@@ -42,3 +42,37 @@ export declare type TMisteryText = {
     [k: number]: string
   }
 } & object;
+
+export declare type TLiturgyResponse = {
+    data: string;
+    liturgia: string;
+    cor: string;
+    // prayer
+    dia: string;
+    oferendas: string;
+    comunhao: string;
+    primeiraLeitura: {
+      referencia: string
+      titulo: string;
+      texto: string;
+    },
+    segundaLeitura: {
+      referencia: string
+      titulo: string;
+      texto: string;
+    },
+    salmo: {
+      referencia: string;
+      refrao: string;
+      texto: string;
+    },
+    evangelho: {
+      /* livro capítulo, versiculo-versiculo */
+      referencia: string;
+      /* Proclamação do evangelho segundo ... */
+      titulo: string;
+      /* texto do evangelho */
+      texto: string;
+    }
+  };
+

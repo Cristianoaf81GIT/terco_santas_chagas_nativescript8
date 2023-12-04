@@ -7,7 +7,7 @@ import {
   SlideInOnTopTransition,
 } from 'nativescript-ui-sidedrawer';
 import { filter } from 'rxjs/operators';
-import { Application } from '@nativescript/core';
+import { Application, Connectivity } from '@nativescript/core';
 
 @Component({
   selector: 'ns-app',
@@ -16,12 +16,23 @@ import { Application } from '@nativescript/core';
 export class AppComponent implements OnInit {
   private _activatedUrl: string
   private _sideDrawerTransition: DrawerTransitionBase
+  private connectionType: number;
+  public deviceIsConnected: boolean;
 
   constructor(
     private router: Router,
     private routerExtensions: RouterExtensions
   ) {
-    // Use the component constructor to inject services.
+    // check device connectivity
+    this.connectionType = Connectivity.getConnectionType();
+    if (
+      this.connectionType === Connectivity.connectionType.wifi ||
+      this.connectionType === Connectivity.connectionType.mobile
+    ) {
+      this.deviceIsConnected = true;
+    } else {
+      this.deviceIsConnected = false;
+    }
   }
 
   ngOnInit(): void {
