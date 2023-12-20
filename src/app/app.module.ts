@@ -5,7 +5,7 @@ import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angul
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { asyncBoot } from "./utils/async-boot.function";
+// import { asyncBoot } from "./utils/async-boot.function";
 
 @NgModule({
   bootstrap: [AppComponent],
@@ -15,7 +15,7 @@ import { asyncBoot } from "./utils/async-boot.function";
     NativeScriptUISideDrawerModule,
   ],
   declarations: [AppComponent],
-  providers: [{ provide: APP_INITIALIZER, useFactory: asyncBoot, multi: true }],
+//  providers: [{ provide: APP_INITIALIZER, useFactory: asyncBoot, multi: true }],
   schemas: [NO_ERRORS_SCHEMA],
 })
 export class AppModule {}

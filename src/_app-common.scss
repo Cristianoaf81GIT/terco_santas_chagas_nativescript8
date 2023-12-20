@@ -151,7 +151,7 @@
 .rosary-body {
   font-family: "Parisienne", "Parisienne-Regular";
   font-weight: 400;
-  font-size: 22;
+  font-size: 18;
   text-align: justify;
   justify-items: inter-word;
   margin-right: 10%;
@@ -203,7 +203,7 @@
   background-color: transparent;
   border-width: 0.5;
   border-color: #000;
-  height: 90;
+  height: 94;
   z-index: 0;
   border-radius: 12;
   &:active {
@@ -211,7 +211,7 @@
     border-color: transparent;
     border-width: 0;
     border-radius: 12;
-    height: 90;
+    height: 94;
   }
 }
 
@@ -298,26 +298,26 @@
 .liturgy {
   font-weight: 100;
   font-family: "Parisienne", "Parisienne-Regular";
-  font-size: 16;
+  font-size: 18;
 
   &-title {
-    font-weight: 100;
-    font-family: "Parisienne", "Parisienne-Regular";
-    font-size: 16;
-    font-weight: bold;
+    font-weight: 300;
+    font-size: 12;
   }
 
   &-evangelion {
     font-weight: 300;
     font-family: "Parisienne", "Parisienne-Regular";
-    font-size: 22;
+    margin: 10;
+    font-size: 18;
+    word-break: break-word;
+    text-align: justify;
+    text-justify: inter-word;
   }
 
   &-container {
-    background-color: #f5f5f5;
-    border-width: 0.8;
-    border-color: #f5f5f5;
-    border-radius: 12;
+    background-color: #FFF;
+    margin: 10;
   }
 
 }

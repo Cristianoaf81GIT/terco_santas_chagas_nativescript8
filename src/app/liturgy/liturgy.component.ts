@@ -31,7 +31,7 @@ export class LiturgyComponent implements OnInit {
     } else {
       this._setTexts();
     }
-  }
+    }
 
   private _setTexts(): void {
     this.firstReading = this.liturgyData.primeiraLeitura.referencia;
@@ -39,10 +39,6 @@ export class LiturgyComponent implements OnInit {
     this.psalm = this.liturgyData.salmo.referencia;
     this.evangelion = this.liturgyData.evangelho.referencia;
     let strArr = this.liturgyData.evangelho.texto.split('.').map(txt => `\n${txt}\n`);
-    /*for (let i = 0; i < strArr.length; i++) {
-      strArr[i] = `\n ${strArr[i]} \n`;
-    }*/
-
     this.evangelionText = strArr.join("")
   }
 
